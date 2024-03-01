@@ -44,7 +44,7 @@ module Api
             private
 
             def stock_params
-                params.require(:stock).permit(:item_id, :department_id, :purchase_date, :arrival_date, :vendor_id, :quantity, :price_per_unit, :image_url, :description)
+                params.require(:stock).permit(:item_id, :department_id, :purchase_date, :arrival_date, :vendor_id, :quantity, :price_per_unit, :image_url, :description, :location)
             end
         end
     end

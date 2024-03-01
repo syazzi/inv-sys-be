@@ -1,6 +1,6 @@
 class StockSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :purchase_date, :arrival_date, :quantity, :price_per_unit, :image_url, :description
+  attributes :purchase_date, :arrival_date, :quantity, :price_per_unit, :location, :image_url, :description, :status, :serial_no, :item_id
 
   attribute :item_name do |object|
     object.item.name if object.item.present?
