@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+    validates :name, :category, presence: true
     has_many :stocks
 
     def current_stock

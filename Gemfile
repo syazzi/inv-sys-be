@@ -36,13 +36,22 @@ gem "bootsnap", require: false
 gem "rack-cors"
 gem 'fast_jsonapi'
 gem 'devise_token_auth', git: 'https://github.com/lynndylanhurley/devise_token_auth'
+gem 'fabrication'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  gem "rspec-rails"
+  gem "webmock"
+  gem 'json_matchers'
 end
 

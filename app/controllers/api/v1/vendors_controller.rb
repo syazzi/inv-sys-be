@@ -12,7 +12,7 @@ module Api
                 if @vendor.save
                     render json: VendorSerializer.new(@vendor).serialized_json
                 else
-                    render json: {data: @vendor.errors, message: "vendors cannot be added"}, status: :unprocessable_entity
+                    render json: {data: @vendor.errors, message: "cannot be added"}, status: :unprocessable_entity
 
                 end
             end
@@ -21,7 +21,7 @@ module Api
         private
 
             def vendor_params
-                params.require(:vendor).permit(:name)
+                params.permit(:name)
             end
 
             def options

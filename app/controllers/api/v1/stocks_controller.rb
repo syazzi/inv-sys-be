@@ -1,6 +1,8 @@
 module Api 
     module V1 
         class StocksController < ApplicationController
+            include RackSessionsFix
+            before_action :authenticate_user!, except: [:index, :show]
             # protect_from_forgery with: :null_session
             def index 
                 stocks = Stock.order('created_at DESC');
@@ -44,7 +46,7 @@ module Api
             private
 
             def stock_params
-                params.require(:stock).permit(:item_id, :department_id, :purchase_date, :arrival_date, :vendor_id, :quantity, :price_per_unit, :image_url, :description, :location)
+                params.permit(:item_id, :department_id, :purchase_date, :arrival_date, :vendor_id, :quantity, :price_per_unit, :image_url, :description, :location, :username)
             end
         end
     end

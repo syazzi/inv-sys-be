@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "object",
+              "properties": {
+                "item_name": {
+                  "type": "string"
+                },
+                "department_name": {
+                    "type": "string"
+                },
+                "vendor_name": {
+                    "type": "string"
+                }
+              },
+              "required": ["item_name", "department_name", "vendor_name"]
+            }
+          },
+          "required": ["id", "type", "attributes"]
+        }
+      }
+    },
+    "required": ["data"]
+  }
